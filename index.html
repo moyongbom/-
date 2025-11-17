@@ -3,164 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECO VIEW – 생태 전환 블로그</title>
+    <title>Green Footprint Navigator | 시각디자인으로 여는 지속 가능한 미래</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- 에스코어 드림 폰트 -->
-    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUITE/fonts/static/woff2/SUITE.css" rel="stylesheet">
-
+    <!-- ⭐ S-Core Dream 웹폰트 -->
     <style>
-        body {
-            margin: 0;
-            font-family: 'SUITE', sans-serif;
-            background: #f6f7ef;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
+        @font-face {
+            font-family: 'SCoreDream';
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/scdream/S-CoreDream-3Light.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/scdream/S-CoreDream-4Regular.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/scdream/S-CoreDream-5Medium.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/webfontworld/scdream/S-CoreDream-6Bold.woff2') format('woff2');
+            font-weight: 300 700;
+            font-style: normal;
         }
 
-        /* 컬러 팔레트 */
         :root {
-            --yellow: #f6e27f;
-            --yellowgreen: #c6e48b;
-            --green: #8cc77b;
+            /* 생태 트렌디 컬러 팔레트 */
+            --color-yellow: #FFDD55;
+            --color-yellow-green: #B7E778;
+            --color-green: #4E8F45;
+            --color-deep-green: #2D6A32;
+            --color-bg: #F8FBEF;
         }
 
-        /* 전체 화면 섹션 */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(to bottom, var(--yellowgreen), var(--green));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
+        body {
+            font-family: 'SCoreDream', sans-serif;
+            background-color: var(--color-bg);
+            color: #333;
+            line-height: 1.7;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .hero p {
-            margin-top: 15px;
-            font-size: 20px;
-        }
-
-        /* 블로그 컨테이너 */
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-
-        /* 페이드 인 + 위로 슬라이드 */
-        .fade-section {
+        /* 페이드 인 애니메이션 */
+        .fade-in-section {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s ease;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        .fade-section.visible {
+        .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* 카드 스타일 */
-        .card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 25px;
-            margin-bottom: 50px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #487e58;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: #eef2d9;
-            color: #556b2f;
+        /* 히어로 영역 */
+        #hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--color-yellow-green), var(--color-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-deep-green);
         }
     </style>
 </head>
-
 <body>
 
-    <!-- HERO 섹션 (전체 화면) -->
-    <section class="hero">
-        <div>
-            <h1>Eco View – 시각으로 이해하는 생태 전환</h1>
-            <p>시각디자인 전공자의 관점에서 재해석한 환경·생태·기후 문제 블로그</p>
+    <!-- ================= HERO SECTION ================= -->
+    <header id="hero-section" class="text-center px-8">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-bold drop-shadow-md">
+                Green Design
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light mt-4 opacity-90">
+                시각디자인으로 환경 문제의 핵심을 겨냥하다
+            </h2>
+            <p class="text-lg mt-8 opacity-90 max-w-xl mx-auto leading-relaxed">
+                우리의 소비 발자국을 투명하게 시각화하고, 지속 가능한 행동으로 안내하는 디자인 네비게이터.  
+                데이터를 누구나 ‘보는 순간 이해’하도록 만드는 디자인의 힘을 경험해보세요.
+            </p>
+            
+            <a href="#content"
+               class="inline-block mt-10 px-8 py-3 rounded-full bg-[var(--color-yellow)] text-gray-900 font-bold shadow-md hover:shadow-xl hover:scale-[1.04] transition">
+                핵심 과제 탐색하기 <span class="ml-2" data-lucide="arrow-down-circle"></span>
+            </a>
         </div>
-    </section>
+    </header>
 
-    <!-- 블로그 본문 -->
-    <div class="container">
+    <!-- ================= MAIN ================= -->
+    <main id="content" class="container mx-auto px-6 py-24">
 
-        <div class="card fade-section">
-            <h2>🌿 1. 환경 문제를 시각적으로 바라보기</h2>
-            <p>
-                기후 위기와 환경 문제는 복잡한 데이터가 많은데,  
-                시각 디자인은 이 복잡한 구조를 단순화하고,  
-                누구나 직관적으로 이해할 수 있게 만드는 역할을 한다.
+        <!-- 1. 시각디자인의 환경 역할 -->
+        <section class="mb-32 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-deep-green)] mb-12 border-b-4 border-[var(--color-yellow-green)] pb-3">
+                <span data-lucide="eye" class="inline-block mr-3 w-9 h-9"></span>
+                디자인, 가장 강력한 환경 언어
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-14">
+                <div>
+                    <h3 class="text-3xl font-semibold text-[var(--color-green)] mb-4">추상적 위협을 구체화하는 힘</h3>
+                    <p class="text-gray-700 text-lg">
+                        기후 변화는 너무 거대해서 가시적으로 느끼기 어렵습니다.  
+                        시각디자인은 추상적 데이터를 구체적인 감각 경험으로 바꿔,  
+                        “지금 행동해야 한다”는 메시지를 직관적으로 전달합니다.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-semibold text-[var(--color-green)] mb-4">그린워싱을 꿰뚫어 보는 투명성</h3>
+                    <p class="text-gray-700 text-lg">
+                        친환경을 내세우지만 실제로는 환경 파괴를 감추는 기업들.  
+                        디자이너는 복잡한 LCA 데이터를 소비자가 단 10초 안에 이해할 수 있도록  
+                        **색상 구분, 아이콘 시스템, 인포그래픽**으로 투명하게 시각화합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 솔루션 -->
+        <section class="mb-32 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-deep-green)] mb-12 border-b-4 border-[var(--color-yellow-green)] pb-3">
+                <span data-lucide="map" class="inline-block mr-3 w-9 h-9"></span>
+                솔루션 제안: 친환경 발자국 길잡이
+            </h2>
+
+            <div class="bg-white p-10 md:p-14 rounded-3xl shadow-xl border-t-8 border-[var(--color-yellow)]">
+                <h3 class="text-4xl font-bold text-[var(--color-green)] mb-6">진정한 지속 가능성 데이터 시각화</h3>
+                <p class="text-gray-700 text-xl mb-12 leading-relaxed">
+                    Green Footprint Navigator는 제품의 전 생애 주기(LCA)를 분석하고  
+                    복잡한 정보를 **단순·직관적인 UI 요소로 재구성**하여  
+                    “어떤 선택이 더 친환경적인지” 한눈에 보이도록 만든 플랫폼입니다.
+                </p>
+
+                <div class="grid sm:grid-cols-3 gap-10">
+                    <div class="p-7 rounded-xl bg-[var(--color-bg)] shadow-md">
+                        <span data-lucide="bar-chart-3" class="w-10 h-10 text-[var(--color-green)] mx-auto mb-3"></span>
+                        <p class="font-semibold text-lg text-[var(--color-deep-green)]">환경 영향 점수</p>
+                        <p class="text-sm text-gray-600">탄소 · 물 · 폐기물 영향도를 0~100 점수로 시각화</p>
+                    </div>
+
+                    <div class="p-7 rounded-xl bg-[var(--color-bg)] shadow-md">
+                        <span data-lucide="zap" class="w-10 h-10 text-[var(--color-green)] mx-auto mb-3"></span>
+                        <p class="font-semibold text-lg text-[var(--color-deep-green)]">대안 자동 추천</p>
+                        <p class="text-sm text-gray-600">검색 제품보다 점수가 높은 대안을 자동 비교</p>
+                    </div>
+
+                    <div class="p-7 rounded-xl bg-[var(--color-bg)] shadow-md">
+                        <span data-lucide="users" class="w-10 h-10 text-[var(--color-green)] mx-auto mb-3"></span>
+                        <p class="font-semibold text-lg text-[var(--color-deep-green)]">게이미피케이션</p>
+                        <p class="text-sm text-gray-600">친환경 소비 시 배지, 랭킹 등 긍정적 피드백 제공</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 디자인 전략 -->
+        <section class="mb-32 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[var(--color-deep-green)] mb-12 border-b-4 border-[var(--color-yellow-green)] pb-3">
+                <span data-lucide="layout" class="inline-block mr-3 w-9 h-9"></span>
+                디자인 전략: 공감과 행동 유도
+            </h2>
+
+            <ul class="space-y-8">
+                <li class="flex items-start">
+                    <span data-lucide="leaf" class="text-[var(--color-green)] w-7 h-7 mr-4 mt-1"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-[var(--color-deep-green)]">감성적 비유 시각화:</strong>  
+                        "플라스틱 물병 하나 = 바다거북 1년 고통"처럼 감성 연결 고리 생성.</p>
+                </li>
+
+                <li class="flex items-start">
+                    <span data-lucide="smartphone" class="text-[var(--color-green)] w-7 h-7 mr-4 mt-1"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-[var(--color-deep-green)]">모바일 우선 UI:</strong>  
+                        바코드 스캔, 즉시 비교 등 현장에서 빠른 정보 접근 가능.</p>
+                </li>
+
+                <li class="flex items-start">
+                    <span data-lucide="palette" class="text-[var(--color-green)] w-7 h-7 mr-4 mt-1"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-[var(--color-deep-green)]">절제된 색상 전략:</strong>  
+                        과한 녹색을 배제하고 자연스러운 옐로–그린 포인트로 명료함 유지.</p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[var(--color-deep-green)] text-gray-200 py-14">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">시각디자인, 세상을 바꾸는 도구</h3>
+            <p class="max-w-xl mx-auto mb-6 opacity-90">
+                Green Footprint Navigator는 시각 언어를 통해  
+                사용자 행동의 변화를 현실로 만드는 지속 가능한 플랫폼입니다.
+            </p>
+
+            <div class="flex justify-center space-x-8">
+                <a href="#" class="hover:text-[var(--color-yellow)] transition">개인정보 보호</a>
+                <a href="#" class="hover:text-[var(--color-yellow)] transition">문의하기</a>
+            </div>
+
+            <p class="mt-10 text-sm opacity-70">
+                © 2025 Green Footprint Navigator. All rights reserved.
             </p>
         </div>
-
-        <div class="card fade-section">
-            <h2>🌱 2. 왜 시각 디자인이 중요한가?</h2>
-            <p>
-                사람들은 텍스트보다 시각 요소에 60배 이상 빠르게 반응한다.  
-                따라서 그래픽, 인터랙션, 일러스트 등은  
-                환경 정보를 더 빠르고 효과적으로 전달할 수 있다.
-            </p>
-        </div>
-
-        <div class="card fade-section">
-            <h2>🍃 3. 지속 가능한 행동을 유도하는 UI</h2>
-            <p>
-                사용자 경험 디자인(UX)은 행동 변화를 만드는 가장 강력한 도구 중 하나다.  
-                친환경 행동을 하면 즉시 ‘시각적 보상’을 주는 인터페이스는  
-                반복적 실천을 유도할 수 있다.
-            </p>
-        </div>
-
-        <div class="card fade-section">
-            <h2>🌎 4. Eco View의 방향성</h2>
-            <p>
-                이 웹앱은 환경 정보를 일러스트, 인터랙션, 데이터 시각화로 풀어내  
-                ‘배우는 즐거움’을 만들어내는 것을 목표로 한다.  
-                앞으로도 여러 기능을 추가해 확장할 수 있다.
-            </p>
-        </div>
-
-    </div>
-
-    <footer>
-        © 2025 ECO VIEW – Designed by Visual Design Perspective
     </footer>
 
+    <!-- ================= JS ================= -->
     <script>
-        const sections = document.querySelectorAll('.fade-section');
+        lucide.createIcons();
 
-        const showOnScroll = () => {
-            const triggerBottom = window.innerHeight * 0.85;
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('.fade-in-section');
 
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < triggerBottom) {
-                    section.classList.add('visible');
-                }
-            });
-        };
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
 
-        window.addEventListener('scroll', showOnScroll);
-        window.addEventListener('load', showOnScroll);
+            sections.forEach(s => observer.observe(s));
+        });
     </script>
 
 </body>
