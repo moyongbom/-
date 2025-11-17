@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Footprint Navigator | 시각디자인으로 여는 지속 가능한 미래</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* S-Core Dream 폰트가 로드되지 않을 경우 Noto Sans KR 사용 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+        :root {
+            --color-yellow: #FFC300;
+            --color-yellow-green: #A2D729;
+            --color-dark-green: #38761D;
+            --font-family-korean: 'Noto Sans KR', sans-serif; /* Fallback for S-Core Dream */
+        }
+        
+        body {
+            font-family: var(--font-family-korean);
+            background-color: #FFFFFF; /* 배경색: 흰색 */
+            color: #333;
+        }
+
+        .text-dark-green { color: var(--color-dark-green); }
+        .bg-yellow { background-color: var(--color-yellow); }
+        .bg-yellow-green { background-color: var(--color-yellow-green); }
+        .border-dark-green { border-color: var(--color-dark-green); }
+        
+        /* 스크롤 페이드 인 애니메이션 초기 상태 */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition-delay: 0.1s;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 꽉 찬 화면 Hero Section */
+        #hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="hero-section" class="bg-yellow-green text-white p-8 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-lg" style="color: var(--color-dark-green);">
+                Green Design 
+            </h1>
+            <h2 class="text-xl md:text-3xl font-light mb-8 italic" style="color: var(--color-dark-green);">
+                시각디자인으로 환경 문제의 핵심을 겨냥하다
+            </h2>
+            <p class="text-base md:text-lg leading-relaxed max-w-2xl mx-auto" style="color: rgba(56, 118, 29, 0.9);">
+                우리의 소비 발자국을 투명하게 시각화하고, 지속 가능한 행동으로 안내하는 디자인 네비게이터, Green Footprint Navigator에 오신 것을 환영합니다.
+            </p>
+            <a href="#content" class="inline-block mt-10 px-8 py-3 bg-yellow text-gray-900 font-bold rounded-full shadow-xl transition hover:shadow-2xl hover:scale-[1.03] duration-300">
+                핵심 과제 탐색하기 <span class="ml-2 text-xl" data-lucide="arrow-down-circle"></span>
+            </a>
+        </div>
+    </header>
+
+    <main id="content" class="container mx-auto px-6 py-20">
+        
+        <section class="mb-24 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-dark-green mb-10 border-b-4 border-yellow-green pb-3">
+                <span data-lucide="eye" class="inline-block mr-3 w-8 h-8 md:w-10 md:h-10"></span>디자인, 가장 강력한 환경 언어
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-3xl font-semibold mb-4 text-dark-green">추상적인 위협의 구체화</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        기후 변화의 위협은 너무 방대하고 추상적이라 일상에서 체감하기 어렵습니다. 시각디자인은 $CO_2$ 농도 같은 딱딱한 데이터를, '일주일간 녹아내린 빙하 조각'과 같은 공감 가능한 이미지로 변환하여 행동의 시급성을 전달합니다.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold mb-4 text-dark-green">그린워싱의 투명성 확보</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        기업들이 '친환경' 마케팅 뒤에 환경 파괴를 숨기는 그린워싱이 만연합니다. 디자이너는 복잡한 라이프 사이클 분석(LCA) 데이터를 소비자가 **10초 안에** 이해할 수 있는 **직관적인 컬러 코딩**과 **인포그래픽**으로 재구성하여 진정한 선택을 돕습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-dark-green mb-10 border-b-4 border-yellow-green pb-3">
+                <span data-lucide="map" class="inline-block mr-3 w-8 h-8 md:w-10 md:h-10"></span>솔루션 제안: 친환경 발자국 길잡이
+            </h2>
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-8 border-yellow">
+                <h3 class="text-4xl font-bold mb-6 text-yellow-green">진정한 지속 가능성 데이터 시각화</h3>
+                <p class="text-gray-700 mb-8 text-xl leading-relaxed">
+                    Green Footprint Navigator는 제품의 **전 생애 주기(Life Cycle)** 데이터를 분석하여, 사용자가 **직관적인 시각 요소**로 환경 영향을 판단하도록 돕는 웹 플랫폼입니다.
+                </p>
+                
+                <div class="grid sm:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 rounded-xl bg-gray-50 shadow-md">
+                        <span data-lucide="bar-chart-3" class="w-10 h-10 mx-auto text-yellow-green mb-3"></span>
+                        <p class="font-semibold text-lg text-dark-green">투명한 데이터 점수</p>
+                        <p class="text-sm text-gray-500">탄소, 물, 폐기물 점수를 0~100으로 명확하게 시각화.</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gray-50 shadow-md">
+                        <span data-lucide="zap" class="w-10 h-10 mx-auto text-yellow-green mb-3"></span>
+                        <p class="font-semibold text-lg text-dark-green">대안 자동 추천</p>
+                        <p class="text-sm text-gray-500">검색한 제품보다 환경 점수가 높은 대안을 즉시 추천.</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gray-50 shadow-md">
+                        <span data-lucide="users" class="w-10 h-10 mx-auto text-yellow-green mb-3"></span>
+                        <p class="font-semibold text-lg text-dark-green">행동 게이미피케이션</p>
+                        <p class="text-sm text-gray-500">친환경 소비 인증 시 배지 및 긍정적 시각 피드백 제공.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-24 fade-in-section">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-dark-green mb-10 border-b-4 border-yellow-green pb-3">
+                <span data-lucide="layout" class="inline-block mr-3 w-8 h-8 md:w-10 md:h-10"></span>디자인 전략: 공감과 행동 유도
+            </h2>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span data-lucide="check-circle" class="text-yellow-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-dark-green font-semibold">비유적 시각화:</strong> "플라스틱 물병 하나 = 거북이의 1년 고통"과 같이 감성적 연결고리를 만드는 이미지를 사용하여 딱딱한 데이터를 감동적으로 전환합니다.</p>
+                </li>
+                <li class="flex items-start">
+                    <span data-lucide="check-circle" class="text-yellow-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-dark-green font-semibold">모바일 우선 디자인:</strong> 소비 현장에서 즉시 정보를 확인할 수 있도록, 바코드 스캔 UX/UI를 최우선으로 간결하고 반응성이 뛰어나게 설계합니다.</p>
+                </li>
+                <li class="flex items-start">
+                    <span data-lucide="check-circle" class="text-yellow-green w-6 h-6 mr-3 mt-1 flex-shrink-0"></span>
+                    <p class="text-lg text-gray-700"><strong class="text-dark-green font-semibold">절제된 색상 사용:</strong> 그린워싱을 피하기 위해 과도한 '녹색' 사용을 자제하고, 데이터의 명료함을 높이는 노란색과 옐로우 그린을 액센트 컬러로 전략적으로 활용합니다.</p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark-green text-gray-200 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">
+                시각디자인, 세상을 변화시키는 도구
+            </h3>
+            <p class="max-w-xl mx-auto mb-6 opacity-80">
+                Green Footprint Navigator는 시각디자인의 힘을 통해 사용자들의 인식을 바꾸고, 더 나은 지구를 위한 작은 행동 변화를 이끌어냅니다.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-yellow transition" aria-label="Privacy Policy">개인정보 보호</a>
+                <a href="#" class="hover:text-yellow transition" aria-label="Contact Us">문의하기</a>
+            </div>
+            <p class="mt-8 text-sm opacity-60">© 2025 Green Footprint Navigator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lucide 아이콘 초기화
+        lucide.createIcons();
+
+        // 스크롤 페이드 인 효과를 위한 Intersection Observer 설정
+        document.addEventListener("DOMContentLoaded", function() {
+            // Hero 섹션 바로 아래부터 관찰 시작
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            // 옵저버 콜백 함수
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    // isIntersecting: 요소가 뷰포트와 교차(보임)하는지 여부
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // 한 번 보이면 관찰을 중지하여 성능 최적화
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // 옵저버 옵션 설정 (뷰포트 밖에서 미리 로드되도록 rootMargin 설정)
+            const observerOptions = {
+                root: null, // 뷰포트를 기준으로
+                rootMargin: '0px 0px -100px 0px', // 뷰포트 하단에서 100px 위로 올라왔을 때 감지 시작
+                threshold: 0.1 // 요소가 10% 정도 보일 때 감지
+            };
+
+            // Intersection Observer 인스턴스 생성
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // 각 섹션에 대해 관찰 시작
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // 초기 로드 시 Hero 섹션으로 자연스럽게 스크롤
+            const heroLink = document.querySelector('a[href="#content"]');
+            if (heroLink) {
+                heroLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('#content').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+```eof
+
+위 코드를 `index.html` 파일로 저장하여 웹 브라우저에서 실행하시면 됩니다.
